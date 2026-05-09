@@ -24,8 +24,11 @@ export default function Navbar() {
 
   // Close mobile menu on route change
   useEffect(() => {
-    setMobileOpen(false);
-    setOpenDropdown(null);
+    const closeMenus = () => {
+      setMobileOpen(false);
+      setOpenDropdown(null);
+    };
+    closeMenus();
   }, [pathname]);
 
   // Lock body scroll when mobile menu is open
@@ -52,10 +55,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-nav"
-          : "bg-white"
+          ? "bg-surface/90 backdrop-blur-lg shadow-nav"
+          : "bg-surface"
       }`}
     >
       <nav className="section-container flex items-center justify-between h-[72px]">
@@ -80,7 +83,7 @@ export default function Navbar() {
         </Link>
 
         {/* ——— Desktop Nav Links ——— */}
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-6">
           {mainNavLinks.map((link) => (
             <DesktopNavItem
               key={link.label}
@@ -96,9 +99,9 @@ export default function Navbar() {
         {/* ——— Desktop CTA ——— */}
         <Link
           href="/admin"
-          className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-lg bg-primary-600 text-white text-sm font-semibold hover:bg-primary-700 transition-colors duration-200 shadow-sm"
+          className="hidden lg:inline-flex items-center px-6 py-2 rounded-full bg-primary-50 text-primary-600 hover:bg-primary-100 hover:text-primary-700 text-sm font-bold transition-colors duration-200"
         >
-          Admin Portal
+          Log in
         </Link>
 
         {/* ——— Mobile Hamburger ——— */}
@@ -114,7 +117,7 @@ export default function Navbar() {
 
       {/* ——— Mobile Menu Overlay ——— */}
       <div
-        className={`lg:hidden fixed inset-0 top-[72px] z-40 transition-all duration-300 ${
+        className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -122,38 +125,50 @@ export default function Navbar() {
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+          className="absolute inset-0 bg-primary-900/40 backdrop-blur-sm transition-opacity duration-300"
           onClick={() => setMobileOpen(false)}
         />
 
-        {/* Panel */}
+        {/* Side Drawer */}
         <div
-          className={`relative bg-white w-full max-h-[calc(100vh-72px)] overflow-y-auto shadow-xl transition-transform duration-300 ${
-            mobileOpen ? "translate-y-0" : "-translate-y-4"
+          className={`absolute top-0 right-0 h-full w-4/5 max-w-sm bg-surface shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
+            mobileOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <ul className="section-container py-4 space-y-1">
-            {mainNavLinks.map((link) => (
-              <MobileNavItem
-                key={link.label}
-                link={link}
-                isActive={isActive(link.href)}
-                openDropdown={openDropdown}
-                onToggle={(label) =>
-                  setOpenDropdown(openDropdown === label ? null : label)
-                }
-              />
-            ))}
+          <div className="flex items-center justify-between p-4 border-b border-border h-[72px]">
+            <span className="font-heading font-bold text-primary-600">Menu</span>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="p-2 text-text-heading hover:text-primary-600 transition-colors"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          
+          <div className="flex-1 overflow-y-auto py-4 px-4">
+            <ul className="space-y-1">
+              {mainNavLinks.map((link) => (
+                <MobileNavItem
+                  key={link.label}
+                  link={link}
+                  isActive={isActive(link.href)}
+                  openDropdown={openDropdown}
+                  onToggle={(label) =>
+                    setOpenDropdown(openDropdown === label ? null : label)
+                  }
+                />
+              ))}
+            </ul>
+          </div>
 
-            <li className="pt-4 border-t border-border mt-4">
-              <Link
-                href="/admin"
-                className="flex items-center justify-center w-full py-3 rounded-lg bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors"
-              >
-                Admin Portal
-              </Link>
-            </li>
-          </ul>
+          <div className="p-4 border-t border-border">
+            <Link
+              href="/admin"
+              className="flex items-center justify-center w-full py-3 rounded-full bg-primary-50 text-primary-600 font-bold hover:bg-primary-100 transition-colors"
+            >
+              Log in
+            </Link>
+          </div>
         </div>
       </div>
     </header>
@@ -187,10 +202,10 @@ function DesktopNavItem({
     >
       <Link
         href={link.href}
-        className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+        className={`flex items-center gap-1 px-1 py-2 text-sm font-bold transition-all duration-200 border-b-2 ${
           active
-            ? "text-primary-600 bg-primary-50"
-            : "text-text-heading hover:text-primary-600 hover:bg-primary-50/60"
+            ? "border-primary-600 text-primary-600"
+            : "border-transparent text-text-heading hover:text-primary-600"
         }`}
       >
         {link.label}
@@ -213,7 +228,7 @@ function DesktopNavItem({
               : "opacity-0 invisible -translate-y-2"
           }`}
         >
-          <ul className="bg-white rounded-xl shadow-card-hover border border-border py-2 min-w-[220px]">
+          <ul className="bg-surface rounded-xl shadow-card-hover border border-border py-2 min-w-[220px]">
             {link.children!.map((child) => (
               <li key={child.label}>
                 <Link

@@ -4,18 +4,17 @@ export interface Notice {
   id: string;
   title: string;
   date: string;
-  category: "general" | "exam" | "admission" | "event" | "result";
   excerpt: string;
-  isNew: boolean;
+  isPinned: boolean;
 }
 
 export interface GalleryImage {
   id: string;
   src: string;
   alt: string;
-  category: string;
   width: number;
   height: number;
+  isFeatured?: boolean;
 }
 
 export interface NavLink {

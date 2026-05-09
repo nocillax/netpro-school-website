@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Lock, Mail, Eye, EyeOff, ShieldCheck } from "lucide-react";
 
 export default function AdminLoginPage() {
@@ -22,7 +21,7 @@ export default function AdminLoginPage() {
     <main className="min-h-[calc(100vh-72px)] flex items-center justify-center bg-gradient-to-br from-surface via-surface-alt to-surface p-4">
       <div className="w-full max-w-md">
         {/* Card */}
-        <div className="bg-white rounded-3xl shadow-card-hover border border-border p-8 md:p-10">
+        <div className="bg-surface rounded-3xl shadow-card-hover border border-border p-8 md:p-10">
           {/* Logo & Title */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-50 mb-5">
@@ -113,7 +112,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3.5 rounded-xl bg-primary-600 text-white font-semibold text-sm hover:bg-primary-700 transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-xl bg-primary-600 text-text-on-dark font-semibold text-sm hover:bg-primary-700 transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isLoading ? (
                 <>

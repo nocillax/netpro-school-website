@@ -28,7 +28,7 @@ export default function Footer() {
                 className="w-12 h-12 object-contain brightness-0 invert"
               />
               <div className="leading-tight">
-                <span className="block font-heading font-bold text-white text-[15px]">
+                <span className="block font-heading font-bold text-text-on-dark text-[15px]">
                   Netpro Model School
                 </span>
                 <span className="block font-heading text-primary-200 text-xs tracking-wide">
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-5">
+            <h3 className="font-heading font-semibold text-text-on-dark text-sm uppercase tracking-wider mb-5">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-primary-300 text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
+                    className="text-primary-300 text-sm hover:text-text-on-dark transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
                     {link.label}
                     <ArrowUpRight
@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Column 3: Academics */}
           <div>
-            <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-5">
+            <h3 className="font-heading font-semibold text-text-on-dark text-sm uppercase tracking-wider mb-5">
               Academics
             </h3>
             <ul className="space-y-3">
@@ -89,7 +89,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-primary-300 text-sm hover:text-white transition-colors duration-200 inline-flex items-center gap-1 group"
+                    className="text-primary-300 text-sm hover:text-text-on-dark transition-colors duration-200 inline-flex items-center gap-1 group"
                   >
                     {link.label}
                     <ArrowUpRight
@@ -104,7 +104,7 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-5">
+            <h3 className="font-heading font-semibold text-text-on-dark text-sm uppercase tracking-wider mb-5">
               Contact Us
             </h3>
             <ul className="space-y-4">
@@ -118,7 +118,7 @@ export default function Footer() {
               <ContactItem icon={<Phone size={16} />}>
                 <a
                   href="tel:+8801XXXXXXXXX"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-text-on-dark transition-colors"
                 >
                   +880 1XXX-XXXXXX
                 </a>
@@ -126,7 +126,7 @@ export default function Footer() {
               <ContactItem icon={<Mail size={16} />}>
                 <a
                   href="mailto:info@netpro.edu.bd"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-text-on-dark transition-colors"
                 >
                   info@netpro.edu.bd
                 </a>
@@ -149,7 +149,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link
               href="/admin"
-              className="hover:text-white transition-colors"
+              className="hover:text-text-on-dark transition-colors"
             >
               Admin Login
             </Link>
@@ -179,7 +179,7 @@ function SocialIcon({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-9 h-9 rounded-lg bg-primary-800 hover:bg-primary-700 flex items-center justify-center text-primary-300 hover:text-white transition-all duration-200"
+      className="w-9 h-9 rounded-lg bg-primary-800 hover:bg-primary-700 flex items-center justify-center text-primary-300 hover:text-text-on-dark transition-all duration-200"
     >
       {children}
     </a>

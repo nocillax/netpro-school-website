@@ -13,10 +13,10 @@ This project is a modernized frontend architecture and design skeleton for "Netp
 ## Design System
 The design system is primarily configured in `src/app/globals.css` using Tailwind v4's `@theme` directive.
 
-*   **Colors (Derived from Logo):**
-    *   Primary: Deep Blue (`#1B3A8C` to `#070E27`)
-    *   Secondary: Green (`#10B981` etc.)
-    *   Accent: Red/Maroon (`#DC2626` etc.)
+*   **Colors (Exact Brand Palette):**
+    *   Primary: Blue (`#2c3691`)
+    *   Secondary: Green (`#0b8d45`)
+    *   Accent: Red (`#ec1f27`)
 *   **Neutrals:** Warm/cool tinted off-whites (e.g., `#F9FAFB`) and charcoals (e.g., `#1E293B`). *No pure `#FFFFFF` or `#000000`.*
 *   **Typography:** Inter for body text (`--font-sans`), Outfit for headings (`--font-heading`).
 
@@ -27,7 +27,7 @@ src/
 ├── app/                          # Next.js App Router pages & routing
 │   ├── globals.css               # Global styles & Tailwind @theme design system
 │   ├── layout.tsx                # Root layout (incorporates Navbar & Footer)
-│   ├── page.tsx                  # Home page (Hero, Stats, Notices, CTA)
+│   ├── page.tsx                  # Home page (Hero, Stats, Messages, Events, Notices, Faculty, CTA)
 │   ├── about/page.tsx            # About Us (Placeholder)
 │   ├── academics/page.tsx        # Academics & Admissions (Placeholder)
 │   ├── admin/page.tsx            # Admin Login UI (Client Component)
@@ -36,20 +36,29 @@ src/
 │   └── notices/page.tsx          # Notice Board (Server Component)
 ├── components/                   # React components
 │   ├── home/                     # Home page specific sections
-│   │   ├── CallToAction.tsx
-│   │   ├── HeroSection.tsx
-│   │   ├── QuickStats.tsx
-│   │   └── RecentNotices.tsx
+│   │   ├── EventsSection.tsx     # Homepage Events View
+│   │   ├── FacultySection.tsx    # Faculty Showcase (Filtered by isFeatured)
+│   │   ├── HeroSection.tsx       # Auto-playing image carousel
+│   │   ├── MessageSection.tsx    # Chairman & Principal Messages
+│   │   ├── QuickStats.tsx        # School Statistics
+│   │   ├── RecentNotices.tsx     # Recent Notices Grid
+│   │   └── FeaturedGallery.tsx   # Homepage gallery (Filtered by isFeatured)
 │   ├── layout/                   # Shared structural components
 │   │   ├── Footer.tsx            # Global footer (Server Component)
 │   │   └── Navbar.tsx            # Global navigation (Client Component, responsive)
-│   └── ui/                       # Reusable UI primitives (buttons, cards, etc. - currently empty)
+│   └── ui/                       # Reusable UI primitives
+│       ├── EventCard.tsx         # Reusable event card with date badge
+│       ├── FacultyCard.tsx       # Reusable dark-themed faculty profile card
+│       ├── NoticeCard.tsx        # Reusable horizontal notice card
+│       └── FadeIn.tsx            # IntersectionObserver wrapper for scroll animations
 ├── data/                         # Mock data & API simulation layer
-│   ├── gallery.ts                # Mock gallery images & getGalleryImages()
+│   ├── events.ts                 # Mock events data (uses isPinned)
+│   ├── gallery.ts                # Mock gallery images (uses isFeatured)
 │   ├── navigation.ts             # Centralized nav and footer link configurations
-│   └── notices.ts                # Mock notices & getNotices()
+│   └── notices.ts                # Mock notices (uses isPinned)
 └── types/
     └── index.ts                  # Shared TypeScript interfaces (Notice, GalleryImage, NavLink, etc.)
+
 public/
 └── logo.svg                      # SVG placeholder logo (to be replaced with actual PNG)
 ```
@@ -66,14 +75,14 @@ public/
 
 ## Current Completion Status
 
-*   **[DONE] Step 1: Project Structure & Config:** Next.js initialized, Tailwind v4 configured, mock data/types created, directory scaffolded.
-*   **[DONE] Step 2: Shared Layouts:** Responsive `Navbar` (with dropdowns & mobile menu) and 4-column `Footer` implemented and integrated into root `layout.tsx`.
-*   **[DONE] Step 3: Home Page Skeleton:** Modular home page built with `HeroSection`, `QuickStats`, `RecentNotices` (preview), and `CallToAction`.
-*   **[DONE] Step 4: Mock Backend Pages:**
+*   **[DONE] Phase 1: Foundation:** Project structure, Tailwind v4 config, exact brand colors applied, mock data/types created.
+*   **[DONE] Phase 2: Shared Layouts:** Responsive `Navbar` and 4-column `Footer` implemented and integrated into root `layout.tsx`.
+*   **[DONE] Phase 3: Homepage Revamp:** Modernized homepage with `HeroSection`, `QuickStats`, `MessageSection`, `EventsSection`, `RecentNotices`, `FacultySection`, and `FeaturedGallery`. Implemented subtle entrance animations using a custom `FadeIn` component.
+*   **[DONE] Phase 4: Mock Backend Pages:**
     *   `/notices`: Server component listing notices.
     *   `/gallery`: Server component with CSS masonry image grid.
     *   `/admin`: Client component with login form UI.
-*   **[PENDING]:** Fleshing out placeholder pages (`/about`, `/academics`, `/contact`), replacing the placeholder `logo.svg` with the actual school logo, and eventually migrating mock data fetching to real NestJS API calls.
+*   **[PENDING]:** Fleshing out placeholder pages (`/about`, `/academics`, `/contact`, `/events`), replacing the placeholder `logo.svg` with the actual school logo, and eventually migrating mock data fetching to real NestJS API calls.
 
 ## Instructions for AI Agents
 When working on this project, adhere to the following guidelines:

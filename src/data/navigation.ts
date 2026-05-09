@@ -23,7 +23,8 @@ export const mainNavLinks: NavLink[] = [
       { label: "Exam Results", href: "/academics#results" },
     ],
   },
-  { label: "Notice Board", href: "/notices" },
+  { label: "Events", href: "/events" },
+  { label: "Notices", href: "/notices" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];

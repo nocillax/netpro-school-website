@@ -1,86 +1,117 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, GraduationCap } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import QuickStats from "./QuickStats";
+
+const carouselSlides = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop",
+    alt: "Students walking on campus",
+    title: "Empowering Future Leaders",
+    subtitle: "Netpro Model School & College provides a world-class educational environment focused on holistic development.",
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2064&auto=format&fit=crop",
+    alt: "Classroom teaching",
+    title: "Excellence in Academics",
+    subtitle: "Our dedicated faculty ensures every student achieves their highest potential through interactive learning.",
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1546410531-bea4edad646a?q=80&w=2069&auto=format&fit=crop",
+    alt: "Students in laboratory",
+    title: "Innovation & Technology",
+    subtitle: "Equipped with modern laboratories and facilities to foster scientific inquiry and technological skills.",
+  }
+];
 
 export default function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-play carousel
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselSlides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+
+
   return (
-    <section className="relative overflow-hidden bg-primary-800 text-white">
-      {/* Background pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.04]">
+    <section className="relative w-full pt-[96px] pb-12 bg-surface">
+      <div className="section-container h-full">
+        <div className="relative w-full min-h-[600px] md:min-h-[80vh] flex items-center overflow-hidden rounded-3xl shadow-xl bg-primary-900">
+      {/* Carousel Backgrounds */}
+      {carouselSlides.map((slide, index) => (
         <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
-      </div>
+          key={slide.id}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-0" : "opacity-0 -z-10"
+            }`}
+        >
+          <Image
+            src={slide.image}
+            alt={slide.alt}
+            fill
+            priority={index === 0}
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Dark Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-900/70 to-transparent"></div>
+          {/* Bottom gradient to blend with the next section */}
+          {/* <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-surface to-transparent z-10"></div> */}
+        </div>
+      ))}
 
-      {/* Gradient accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-900/60 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-primary-900/40 to-transparent" />
-
-      <div className="section-container relative z-10 py-20 md:py-28 lg:py-36">
-        <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8 animate-fade-in">
-            <GraduationCap size={16} className="text-secondary-400" />
-            <span className="text-sm font-medium text-primary-100">
-              Admissions Open for 2026-27
-            </span>
+      {/* Content Container */}
+      <div className="relative z-10 w-full flex flex-col justify-center h-full px-8 md:px-16 pt-20 pb-24">
+        <div className="max-w-3xl animate-slide-up">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface/10 backdrop-blur-md border border-surface/20 text-text-on-dark text-sm font-semibold mb-6">
+            <span className="w-2 h-2 rounded-full bg-secondary-400 animate-pulse"></span>
+            Admissions Open for 2026-27
           </div>
 
-          {/* Heading */}
-          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 animate-slide-up text-white">
-            Shaping Future Leaders
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-300 to-secondary-400">
-              with Excellence
-            </span>
-          </h1>
-
-          {/* Subtext */}
-          <p className="text-lg sm:text-xl text-primary-200 max-w-xl mb-10 leading-relaxed animate-slide-up">
-            Netpro Model School &amp; College, Bogura — empowering students
-            with quality education, moral values, and the skills to make a
-            positive impact on the world.
+          <p className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-on-dark leading-tight mb-6 drop-shadow-md">
+            {carouselSlides[currentSlide].title}
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 animate-slide-up">
+          <p className="text-lg md:text-xl text-text-on-dark/90 mb-10 max-w-2xl drop-shadow">
+            {carouselSlides[currentSlide].subtitle}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4">
             <Link
               href="/academics#admissions"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-primary-700 font-semibold text-[15px] hover:bg-primary-50 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 group"
+              className="px-8 py-4 bg-secondary-600 hover:bg-secondary-500 text-text-on-dark font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-secondary-500/25 flex items-center gap-2"
             >
               Apply for Admission
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-[15px] hover:bg-white/20 transition-all duration-200"
-            >
-              Learn More About Us
+              <ChevronRight size={18} />
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Bottom wave separator */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 60"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 60V30C240 0 480 0 720 30C960 60 1200 60 1440 30V60H0Z"
-            fill="var(--color-surface)"
+      {/* Carousel Controls */}
+      <div className="absolute bottom-8 right-8 md:bottom-12 md:right-16 z-20 flex gap-2">
+        {carouselSlides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              index === currentSlide ? "w-8 bg-text-on-dark" : "w-4 bg-text-on-dark/40 hover:bg-text-on-dark/60"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
-        </svg>
+        ))}
+      </div>
+      </div>
+      <QuickStats />
       </div>
     </section>
   );
