@@ -44,9 +44,10 @@ export default function HeroSection() {
 
 
   return (
-    <section className="relative w-full pt-[96px] pb-12 bg-surface">
+    <section className="relative w-full pt-[96px] pb-12 bg-surface-alt">
       <div className="section-container h-full">
-        <div className="relative w-full min-h-[600px] md:min-h-[80vh] flex items-center overflow-hidden rounded-3xl shadow-xl bg-primary-900">
+        <div className="bg-surface rounded-[2rem] md:rounded-[3rem] shadow-xl overflow-hidden flex flex-col border border-border">
+          <div className="relative w-full min-h-[500px] md:min-h-[70vh] flex items-center overflow-hidden">
       {/* Carousel Backgrounds */}
       {carouselSlides.map((slide, index) => (
         <div
@@ -111,7 +112,10 @@ export default function HeroSection() {
         ))}
       </div>
       </div>
-      <QuickStats />
+      <div className="px-4 md:px-12">
+        <QuickStats />
+      </div>
+      </div>
       </div>
     </section>
   );

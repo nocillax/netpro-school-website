@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, MapPin } from "lucide-react";
+import { Clock, MapPin, Pin } from "lucide-react";
 
 export default function EventCard({ event }: { event: { id: string | number, date: string, title: string, time: string, location: string, image: string, isPinned?: boolean } }) {
   const dateObj = new Date(event.date);
@@ -22,6 +22,11 @@ export default function EventCard({ event }: { event: { id: string | number, dat
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
+        {event.isPinned && (
+          <div className="absolute top-3 right-3 bg-accent-600 text-white p-2 rounded-full shadow-md z-10" title="Pinned Event">
+            <Pin size={16} className="fill-current" />
+          </div>
+        )}
       </div>
 
       {/* Bottom Content Container */}
