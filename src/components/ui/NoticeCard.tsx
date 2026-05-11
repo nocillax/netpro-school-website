@@ -13,6 +13,11 @@ export default function NoticeCard({ notice }: { notice: Notice }) {
       href={`/notices/${notice.id}`}
       className="group bg-surface rounded-2xl p-5 md:p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-border hover:border-primary-200 hover:-translate-y-1 flex gap-5 md:gap-6 relative"
     >
+      {notice.isPinned && (
+        <div className="absolute top-3 right-3 bg-accent-600 text-white p-2 rounded-full shadow-md z-10" title="Pinned Notice">
+          <Pin size={16} className="fill-current" />
+        </div>
+      )}
       {/* Left Date Column */}
       <div className="flex flex-col items-center justify-center bg-primary-600 rounded-xl min-w-[5rem] shrink-0 text-text-on-dark py-3">
         <span className="font-heading text-2xl font-bold leading-none mb-1">{day}</span>
@@ -23,15 +28,9 @@ export default function NoticeCard({ notice }: { notice: Notice }) {
       {/* Right Content Column */}
       <div className="flex flex-col flex-1 py-1">
         <div className="flex items-start justify-between mb-2">
-          <h3 className="font-heading font-bold text-text-heading text-lg leading-snug group-hover:text-accent-600 transition-colors line-clamp-2">
+          <h3 className="font-heading font-bold text-text-heading text-lg leading-snug group-hover:text-accent-600 transition-colors line-clamp-2 pr-6">
             {notice.title}
           </h3>
-          {notice.isPinned && (
-            <span className="ml-3 shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-accent-500 text-text-on-dark text-[10px] font-bold uppercase tracking-wide shadow-sm">
-              <Pin size={10} className="fill-current" />
-              Pinned
-            </span>
-          )}
         </div>
         <p className="text-sm text-text-body leading-relaxed line-clamp-2">
           {notice.excerpt}

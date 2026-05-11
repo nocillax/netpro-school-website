@@ -25,15 +25,15 @@ export default function MessageSection() {
                 </div>
                 <div>
                   <h3 className="font-heading text-xl font-bold text-text-heading group-hover:text-accent-600 transition-colors">
-                    Mr. John Doe
+                    A K M Mejanur Islam
                   </h3>
                   <p className="text-sm font-semibold text-primary-600 uppercase tracking-wider">
-                    Chairman
+                    Founder Chairman
                   </p>
                 </div>
               </div>
               <p className="text-text-body font-medium italic mb-6 line-clamp-4">
-                &quot;Welcome to Netpro Model School &amp; College. Our vision is to nurture young minds into responsible, innovative, and compassionate global citizens. We are committed to providing an environment where every student can discover their true potential and achieve academic excellence.&quot;
+                &quot;Knowledge, humanity, and skill development are the core foundations of education. Only true education can create enlightened human beings. At Netpro Model School &amp; College, we provide a disciplined and modern environment to prepare students for the future.&quot;
               </p>
               <Link
                 href="/about#chairman"
@@ -63,7 +63,7 @@ export default function MessageSection() {
                 </div>
                 <div>
                   <h3 className="font-heading text-xl font-bold text-text-heading group-hover:text-accent-600 transition-colors">
-                    Dr. Jane Smith
+                    Riya Sharmin
                   </h3>
                   <p className="text-sm font-semibold text-primary-600 uppercase tracking-wider">
                     Principal
@@ -71,7 +71,7 @@ export default function MessageSection() {
                 </div>
               </div>
               <p className="text-text-body font-medium italic mb-6 line-clamp-4">
-                &quot;Education is not just about academic success; it is about building character. At Netpro, our dedicated faculty ensures that learning is engaging, practical, and tailored to meet the challenges of the 21st century. We invite you to join our vibrant community.&quot;
+                &quot;In a changing world, education is the main ladder for an individual to reach their peak. At Netpro Model School &amp; College, our joyful and disciplined environment ensures students develop into people with right values and the courage to face global challenges.&quot;
               </p>
               <Link
                 href="/about#principal"

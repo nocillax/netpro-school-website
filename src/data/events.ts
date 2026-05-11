@@ -12,32 +12,42 @@ export interface EventItem {
 export const mockEvents: EventItem[] = [
   {
     id: "1",
-    title: "National Science Fair 2026",
-    date: "2026-06-15",
+    title: "Inter-House Football Tournament 2025",
+    date: "2025-12-17",
     time: "09:00 AM - 04:00 PM",
-    location: "Main Auditorium",
-    image: "https://images.unsplash.com/photo-1564325724739-bae0bd08762c?q=80&w=600&auto=format&fit=crop",
-    excerpt: "Join us for our annual science fair featuring innovative projects from our talented students across all grades.",
+    location: "Main Campus Grounds",
+    image: "https://images.unsplash.com/photo-1518605368461-1ee18eb1a476?q=80&w=600&auto=format&fit=crop",
+    excerpt: "The Inter-House Football Tournament 2025 was held with great enthusiasm and sportsman spirit.",
     isPinned: true,
   },
   {
     id: "2",
-    title: "Inter-School Football Tournament",
-    date: "2026-05-20",
-    time: "03:00 PM - 06:00 PM",
-    location: "School Stadium",
-    image: "https://images.unsplash.com/photo-1518605368461-1ee18eb1a476?q=80&w=600&auto=format&fit=crop",
-    excerpt: "Cheer for our school team as they face off against regional schools in the semi-finals.",
+    title: "SSC 2026 Farewell Ceremony",
+    date: "2026-04-28",
+    time: "10:30 AM - 01:30 PM",
+    location: "Auditorium Hall",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop",
+    excerpt: "A heartfelt farewell for our SSC 2026 candidates, wishing them success in their future endeavors.",
     isPinned: false,
   },
   {
     id: "3",
-    title: "Cultural Festival & Art Exhibition",
-    date: "2026-07-05",
-    time: "10:00 AM - 08:00 PM",
-    location: "Campus Grounds",
-    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600&auto=format&fit=crop",
-    excerpt: "A day-long celebration of art, music, and cultural diversity showcasing student performances.",
+    title: "New Academic Session 2026 Orientation",
+    date: "2026-01-08",
+    time: "09:00 AM - 12:00 PM",
+    location: "School Campus",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop",
+    excerpt: "Welcoming the students of the 2026 academic year with an orientation program and festivities.",
     isPinned: false,
   },
 ];
+
+export async function getEvents(): Promise<EventItem[]> {
+  await new Promise((resolve) => setTimeout(resolve, 100));
+  return mockEvents;
+}
+
+export async function getEventById(id: string): Promise<EventItem | undefined> {
+  await new Promise((resolve) => setTimeout(resolve, 100));
+  return mockEvents.find((e) => e.id === id);
+}

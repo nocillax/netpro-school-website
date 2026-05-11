@@ -21,7 +21,7 @@ const stats = [
   },
   {
     id: 4,
-    value: "15+",
+    value: "20+",
     label: "Years of Excellence",
     icon: Trophy,
   },
