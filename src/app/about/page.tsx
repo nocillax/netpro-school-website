@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us — Netpro Model School & College",
@@ -62,11 +63,13 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="order-1 lg:order-2 relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
+              <Image 
+                src="/images/about/history.webp"
+                alt="Netpro Model School & College Campus History"
+                fill
+                className="object-cover"
+              />
               <div className="absolute inset-0 bg-primary-900/10 z-10"></div>
-              {/* Image will be placed here by the user */}
-              <div className="w-full h-full bg-surface-alt flex items-center justify-center text-text-muted italic">
-                School History Image
-              </div>
             </div>
           </div>
         </div>
@@ -77,9 +80,13 @@ export default function AboutPage() {
           <div id="chairman" className="bg-surface rounded-3xl p-8 lg:p-12 shadow-card border border-border scroll-mt-24">
             <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Chairman&apos;s Message</h2>
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-48 h-48 rounded-2xl bg-surface-alt border border-border shrink-0 flex items-center justify-center text-text-muted italic overflow-hidden relative">
-                <div className="absolute inset-0 bg-primary-50/50"></div>
-                Photo
+              <div className="w-48 h-48 rounded-2xl bg-surface-alt border border-border shrink-0 overflow-hidden relative shadow-md">
+                <Image 
+                  src="/images/about/chairman.webp"
+                  alt="A K M Mejanur Islam - Chairman"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="space-y-4 text-text-body leading-relaxed flex-1">
                 <h3 className="text-xl font-bold text-primary-700">A K M Mejanur Islam</h3>
@@ -97,9 +104,13 @@ export default function AboutPage() {
           <div id="principal" className="bg-surface rounded-3xl p-8 lg:p-12 shadow-card border border-border scroll-mt-24">
             <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Principal&apos;s Message</h2>
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-48 h-48 rounded-2xl bg-surface-alt border border-border shrink-0 flex items-center justify-center text-text-muted italic overflow-hidden relative">
-                <div className="absolute inset-0 bg-secondary-50/50"></div>
-                Photo
+              <div className="w-48 h-48 rounded-2xl bg-surface-alt border border-border shrink-0 overflow-hidden relative shadow-md">
+                <Image 
+                  src="/images/about/principal.webp"
+                  alt="Riya Sharmin - Principal"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="space-y-4 text-text-body leading-relaxed flex-1">
                 <h3 className="text-xl font-bold text-secondary-700">Riya Sharmin</h3>

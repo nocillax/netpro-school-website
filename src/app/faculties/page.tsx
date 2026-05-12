@@ -10,51 +10,51 @@ export const metadata: Metadata = {
 const allFaculty = [
   {
     id: 1,
-    name: "Dr. Robert Chen",
+    name: "Dr. Rafiqul Alam",
     designation: "Head of Science Department",
-    image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-1.webp",
   },
   {
     id: 2,
-    name: "Ms. Sarah Jenkins",
+    name: "Ms. Salma Begum",
     designation: "Senior Mathematics Teacher",
-    image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-3.webp",
   },
   {
     id: 3,
-    name: "Mr. David Rahman",
+    name: "Mr. Kamrul Hasan",
     designation: "Head of Humanities",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-2.webp",
   },
   {
     id: 4,
-    name: "Mrs. Fatima Khatun",
+    name: "Mrs. Nasrin Akter",
     designation: "Senior English Teacher",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-5.webp",
   },
   {
     id: 5,
-    name: "Mr. James Wilson",
+    name: "Mr. Abdus Sabur",
     designation: "Physical Education Instructor",
-    image: "https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-4.webp",
   },
   {
     id: 6,
     name: "Mrs. Ayesha Siddiqa",
     designation: "Biology & Chemistry Teacher",
-    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-6.webp",
   },
   {
     id: 7,
     name: "Mr. Hasan Mahmud",
     designation: "Physics Lecturer",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-2.webp",
   },
   {
     id: 8,
     name: "Ms. Nafisa Akter",
     designation: "Computer Science Teacher",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-1.webp",
   }
 ];
 

@@ -18,7 +18,7 @@ export default function MessageSection() {
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-primary-50">
                   <Image
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
+                    src="/images/about/chairman.webp"
                     alt="Chairman"
                     fill
                     className="object-cover"
@@ -57,7 +57,7 @@ export default function MessageSection() {
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-primary-50">
                   <Image
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                    src="/images/about/principal.webp"
                     alt="Principal"
                     fill
                     className="object-cover"

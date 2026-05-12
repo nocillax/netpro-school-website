@@ -10,24 +10,24 @@ import AdminEditOverlay from "@/components/admin/AdminEditOverlay";
 const carouselSlides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/home/hero-1.webp",
     alt: "Netpro Model School & College Campus",
     title: "Get Enlightened to Serve the Humanity",
     subtitle: "Netpro Model School & College, Bogra, is dedicated to nurturing nobility, enlightenment, and truthfulness in every student.",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2064&auto=format&fit=crop",
+    image: "/images/home/hero-2.webp",
     alt: "Interactive Classrooms",
-    title: "Nation-wide English Teaching Program",
-    subtitle: "Originally founded as an English teaching institution, we maintain excellence in language and academic standards.",
+    title: "Excellence in Education Since 2005",
+    subtitle: "Providing a modern and disciplined environment for students to reach their full potential.",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1546410531-bea4edad646a?q=80&w=2069&auto=format&fit=crop",
+    image: "/images/home/hero-3.webp",
     alt: "Modern Facilities",
-    title: "Excellence Since 2005",
-    subtitle: "Building a foundation of perseverance, resilience, and obedience for over two decades in Bogra.",
+    title: "Building the Leaders of Tomorrow",
+    subtitle: "Empowering students with knowledge, values, and the courage to face global challenges.",
   }
 ];
 

@@ -5,37 +5,37 @@ import FacultyCard from "@/components/ui/FacultyCard";
 const mockFaculty = [
   {
     id: 1,
-    name: "Dr. Robert Chen",
+    name: "Dr. Rafiqul Alam",
     designation: "Head of Science Department",
-    image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-1.webp",
     isFeatured: true,
   },
   {
     id: 2,
-    name: "Ms. Sarah Jenkins",
+    name: "Ms. Salma Begum",
     designation: "Senior Mathematics Teacher",
-    image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-3.webp",
     isFeatured: true,
   },
   {
     id: 3,
-    name: "Mr. David Rahman",
+    name: "Mr. Kamrul Hasan",
     designation: "Head of Humanities",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-2.webp",
     isFeatured: true,
   },
   {
     id: 4,
-    name: "Mrs. Fatima Khatun",
+    name: "Mrs. Nasrin Akter",
     designation: "Senior English Teacher",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-5.webp",
     isFeatured: true,
   },
   {
     id: 5,
-    name: "Mr. James Wilson",
+    name: "Mr. Abdus Sabur",
     designation: "Physical Education Instructor",
-    image: "https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=300&auto=format&fit=crop",
+    image: "/images/faculty/teacher-4.webp",
     isFeatured: false,
   }
 ];

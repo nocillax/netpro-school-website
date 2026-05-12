@@ -20,11 +20,11 @@ export default function CallToAction({ className }: CallToActionProps) {
         <div className="flex flex-wrap items-center justify-center p-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm mb-8 animate-fade-in">
           <div className="flex items-center">
             <img className="size-8 md:size-9 rounded-full border-2 border-white shadow-sm"
-              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100" alt="Student 1" />
+              src="/images/faculty/teacher-1.webp" alt="Student 1" />
             <img className="size-8 md:size-9 rounded-full border-2 border-white shadow-sm -translate-x-3"
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100" alt="Student 2" />
+              src="/images/faculty/teacher-3.webp" alt="Student 2" />
             <img className="size-8 md:size-9 rounded-full border-2 border-white shadow-sm -translate-x-6"
-              src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=100" alt="Student 3" />
+              src="/images/faculty/teacher-6.webp" alt="Student 3" />
           </div>
           <p className="-translate-x-3 font-semibold px-2">Join our community of 2,000+ students</p>
         </div>
