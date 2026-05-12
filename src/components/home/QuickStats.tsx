@@ -29,21 +29,22 @@ const stats = [
 
 export default function QuickStats() {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-8 md:py-12 bg-surface">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-4 md:py-8 bg-surface">
       {stats.map((stat) => (
         <div
           key={stat.id}
           className="flex flex-col items-center text-center transition-transform hover:-translate-y-1 group"
         >
-          <div className="mb-4 text-text-heading group-hover:text-primary-600 transition-colors">
+          {/* <div className="mb-4 text-text-heading group-hover:text-primary-600 transition-colors">
             <stat.icon size={40} strokeWidth={1.5} />
-          </div>
-          <h3 className="font-heading text-xl md:text-2xl font-bold text-text-heading mb-1">
+          </div> */}
+          <p className="text-sm font-bold text-text-muted">
             {stat.label}
-          </h3>
-          <p className="text-sm font-medium text-text-muted">
-            Overall {stat.value}
           </p>
+          <h3 className="font-heading text-xl md:text-2xl font-bold text-text-heading mb-1">
+            {stat.value}
+          </h3>
+
         </div>
       ))}
     </div>

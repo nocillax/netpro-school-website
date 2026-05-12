@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import QuickStats from "./QuickStats";
+import AdminEditOverlay from "@/components/admin/AdminEditOverlay";
 
 const carouselSlides = [
   {
@@ -46,7 +47,9 @@ export default function HeroSection() {
   return (
     <section className="relative w-full pt-[96px] pb-12 bg-surface-alt">
       <div className="section-container h-full">
-        <div className="bg-surface rounded-[2rem] md:rounded-[3rem] shadow-xl overflow-hidden flex flex-col border border-border">
+        <div className="bg-surface rounded-[2rem] md:rounded-[3rem] shadow-xl overflow-hidden flex flex-col border border-border relative">
+          <AdminEditOverlay href="/admin/pages/home?edit=hero" label="Edit Hero Text" position="top-right" />
+          
           <div className="relative w-full min-h-[500px] md:min-h-[70vh] flex items-center overflow-hidden">
       {/* Carousel Backgrounds */}
       {carouselSlides.map((slide, index) => (

@@ -1,141 +1,81 @@
-"use client";
+import { getEvents } from "@/data/events";
+import { getNotices } from "@/data/notices";
+import Link from "next/link";
+import { CalendarDays, Bell, Users, PlusCircle } from "lucide-react";
 
-import { useState } from "react";
-import { Lock, Mail, Eye, EyeOff, ShieldCheck } from "lucide-react";
-
-export default function AdminLoginPage() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setIsLoading(true);
-    // Simulate login attempt
-    setTimeout(() => {
-      setIsLoading(false);
-      alert("Login functionality will be connected to the NestJS backend.");
-    }, 1500);
-  }
+export default async function AdminDashboardPage() {
+  const events = await getEvents();
+  const notices = await getNotices();
 
   return (
-    <main className="min-h-[calc(100vh-72px)] flex items-center justify-center bg-gradient-to-br from-surface via-surface-alt to-surface p-4">
-      <div className="w-full max-w-md">
-        {/* Card */}
-        <div className="bg-surface rounded-3xl shadow-card-hover border border-border p-8 md:p-10">
-          {/* Logo & Title */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-50 mb-5">
-              <ShieldCheck size={28} className="text-primary-600" />
+    <div className="space-y-8 max-w-6xl">
+      <div>
+        <h1 className="text-3xl font-heading font-bold text-text-heading mb-2">Welcome, System Admin</h1>
+        <p className="text-text-muted">Manage your website content from this dashboard.</p>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-surface rounded-2xl p-6 shadow-sm border border-border">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center">
+              <CalendarDays size={24} />
             </div>
-            <h1 className="font-heading text-2xl font-bold text-text-heading mb-2">
-              Admin Portal
-            </h1>
-            <p className="text-sm text-text-muted">
-              Sign in to manage notices, gallery, and site content.
-            </p>
+            <div>
+              <p className="text-sm font-medium text-text-muted">Total Events</p>
+              <h3 className="text-2xl font-bold text-text-heading">{events.length}</h3>
+            </div>
           </div>
-
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Email */}
-            <div>
-              <label
-                htmlFor="admin-email"
-                className="block text-sm font-semibold text-text-heading mb-2"
-              >
-                Email Address
-              </label>
-              <div className="relative">
-                <Mail
-                  size={18}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted"
-                />
-                <input
-                  id="admin-email"
-                  type="email"
-                  placeholder="admin@netpro.edu.bd"
-                  required
-                  className="w-full pl-11 pr-4 py-3 rounded-xl bg-surface-alt border border-border text-text-heading text-sm placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
-                />
-              </div>
-            </div>
-
-            {/* Password */}
-            <div>
-              <label
-                htmlFor="admin-password"
-                className="block text-sm font-semibold text-text-heading mb-2"
-              >
-                Password
-              </label>
-              <div className="relative">
-                <Lock
-                  size={18}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted"
-                />
-                <input
-                  id="admin-password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Enter your password"
-                  required
-                  className="w-full pl-11 pr-12 py-3 rounded-xl bg-surface-alt border border-border text-text-heading text-sm placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-heading transition-colors"
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                </button>
-              </div>
-            </div>
-
-            {/* Remember + Forgot */}
-            <div className="flex items-center justify-between">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="w-4 h-4 rounded border-border text-primary-600 focus:ring-primary-400"
-                />
-                <span className="text-sm text-text-muted">Remember me</span>
-              </label>
-              <button
-                type="button"
-                className="text-sm text-primary-600 font-medium hover:text-primary-700 transition-colors"
-              >
-                Forgot password?
-              </button>
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full py-3.5 rounded-xl bg-primary-600 text-text-on-dark font-semibold text-sm hover:bg-primary-700 transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            >
-              {isLoading ? (
-                <>
-                  <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Signing in...
-                </>
-              ) : (
-                "Sign In"
-              )}
-            </button>
-          </form>
-
-          {/* Note */}
-          <p className="mt-6 text-center text-xs text-text-muted">
-            This portal is restricted to authorized school administrators only.
-          </p>
+          <Link href="/admin/events" className="text-sm font-semibold text-primary-600 hover:text-primary-700">
+            Manage Events &rarr;
+          </Link>
         </div>
 
-        {/* Bottom branding */}
-        <p className="text-center text-xs text-text-muted mt-6">
-          Netpro Model School &amp; College, Bogura
-        </p>
+        <div className="bg-surface rounded-2xl p-6 shadow-sm border border-border">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-secondary-50 text-secondary-600 flex items-center justify-center">
+              <Bell size={24} />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-text-muted">Total Notices</p>
+              <h3 className="text-2xl font-bold text-text-heading">{notices.length}</h3>
+            </div>
+          </div>
+          <Link href="/admin/notices" className="text-sm font-semibold text-secondary-600 hover:text-secondary-700">
+            Manage Notices &rarr;
+          </Link>
+        </div>
+
+        <div className="bg-surface rounded-2xl p-6 shadow-sm border border-border">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-accent-50 text-accent-600 flex items-center justify-center">
+              <Users size={24} />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-text-muted">Admin Users</p>
+              <h3 className="text-2xl font-bold text-text-heading">1</h3>
+            </div>
+          </div>
+          <span className="text-sm font-semibold text-text-muted">
+            Static Mock
+          </span>
+        </div>
       </div>
-    </main>
+
+      {/* Quick Actions */}
+      <div>
+        <h2 className="text-xl font-heading font-bold text-text-heading mb-4">Quick Actions</h2>
+        <div className="flex flex-wrap gap-4">
+          <button className="flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-medium transition-colors">
+            <PlusCircle size={20} />
+            Create Event
+          </button>
+          <button className="flex items-center gap-2 px-6 py-3 bg-secondary-600 hover:bg-secondary-700 text-white rounded-xl font-medium transition-colors">
+            <PlusCircle size={20} />
+            Publish Notice
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }

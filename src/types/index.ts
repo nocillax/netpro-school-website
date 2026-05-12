@@ -6,6 +6,7 @@ export interface Notice {
   date: string;
   excerpt: string;
   isPinned: boolean;
+  [key: string]: string | boolean | undefined;
 }
 
 export interface GalleryImage {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Clock, MapPin, Pin } from "lucide-react";
+import AdminEditOverlay from "@/components/admin/AdminEditOverlay";
 
 export default function EventCard({ event }: { event: { id: string | number, date: string, title: string, time: string, location: string, image: string, isPinned?: boolean } }) {
   const dateObj = new Date(event.date);
@@ -9,10 +10,13 @@ export default function EventCard({ event }: { event: { id: string | number, dat
   const year = dateObj.getFullYear();
 
   return (
-    <Link
-      href={`/events/${event.id}`}
-      className="group bg-surface rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-border hover:border-primary-200 hover:-translate-y-1 flex flex-col h-full"
+    <div
+      className="group bg-surface rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-border hover:border-primary-200 hover:-translate-y-1 flex flex-col h-full relative"
     >
+      <AdminEditOverlay href={`/admin/events?edit=${event.id}`} label="Edit Event" position="center" />
+      
+      <Link href={`/events/${event.id}`} className="absolute inset-0 z-10" aria-label={`View details for ${event.title}`} />
+      
       {/* Top Image */}
       <div className="relative w-full aspect-[4/3] overflow-hidden bg-surface-alt shrink-0">
         <Image
@@ -56,6 +60,6 @@ export default function EventCard({ event }: { event: { id: string | number, dat
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

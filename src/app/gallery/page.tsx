@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Camera } from "lucide-react";
+import { Camera, ChevronFirst, ChevronLast, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 import { getGalleryImages } from "@/data/gallery";
+import { Pagination, PaginationContent, PaginationItem } from "@/components/ui/pagination";
+import { Button } from "@/components/ui/button-1";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -9,64 +12,123 @@ export const metadata: Metadata = {
     "Browse photos from campus life, events, sports, and academics at Netpro Model School & College, Bogura.",
 };
 
-export default async function GalleryPage() {
-  const images = await getGalleryImages();
+export default async function GalleryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const allImages = await getGalleryImages();
+  const resolvedParams = await searchParams;
+  const currentPage = Number(resolvedParams.page) || 1;
+  const imagesPerPage = 9;
+  
+  const totalPages = Math.ceil(allImages.length / imagesPerPage);
+  const images = allImages.slice((currentPage - 1) * imagesPerPage, currentPage * imagesPerPage);
 
   return (
-    <main>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-text-on-dark">
-        <div className="section-container py-16 md:py-20">
+    <main className="pt-32 pb-20">
+      <div className="section-container">
+        {/* Page Header */}
+        <div className="max-w-3xl mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-surface/10 flex items-center justify-center">
-              <Camera size={20} className="text-secondary-400" />
+            <div className="w-10 h-10 rounded-xl bg-accent-50 flex items-center justify-center">
+              <Camera size={20} className="text-accent-600" />
             </div>
-            <span className="text-sm font-semibold text-primary-200 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-accent-600 uppercase tracking-wider">
               Campus Life
             </span>
           </div>
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Photo Gallery
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-text-heading mb-6">
+            Photo <span className="text-primary-600">Gallery</span>
           </h1>
-          <p className="text-primary-200 text-lg max-w-2xl">
-            A glimpse into life at Netpro — from classrooms and laboratories to
-            sports fields and cultural events.
+          <p className="text-lg text-text-body leading-relaxed">
+            A glimpse into life at Netpro — from classrooms and laboratories to sports fields and cultural events.
           </p>
         </div>
-      </section>
 
-      {/* Gallery Grid */}
-      <section className="section-container py-12 md:py-16">
-
-        {/* Masonry-style grid using CSS columns */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {images.map((image) => (
-            <div
-              key={image.id}
-              className="group break-inside-avoid rounded-2xl overflow-hidden bg-surface shadow-card hover:shadow-card-hover transition-all duration-300 border border-border"
-            >
-              <div className="relative overflow-hidden">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <div>
-                    <p className="text-text-on-dark text-sm font-medium leading-snug">
-                      {image.alt}
-                    </p>
+        {/* Gallery Grid */}
+        <section className="py-12 md:py-16">
+          {/* Masonry-style grid using CSS columns */}
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+            {images.map((image) => (
+              <div
+                key={image.id}
+                className="group break-inside-avoid rounded-2xl overflow-hidden bg-surface shadow-card hover:shadow-card-hover transition-all duration-300 border border-border"
+              >
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <div>
+                      <p className="text-text-on-dark text-sm font-medium leading-snug">
+                        {image.alt}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+          
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="mt-12">
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <Button variant="ghost" mode="icon" asChild disabled={currentPage === 1}>
+                      <Link href={`?page=1`}>
+                        <ChevronFirst className="rtl:rotate-180" />
+                      </Link>
+                    </Button>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <Button variant="ghost" mode="icon" asChild disabled={currentPage === 1}>
+                      <Link href={`?page=${Math.max(1, currentPage - 1)}`}>
+                        <ChevronLeft className="rtl:rotate-180" />
+                      </Link>
+                    </Button>
+                  </PaginationItem>
+                  
+                  {[...Array(totalPages)].map((_, i) => (
+                    <PaginationItem key={i + 1}>
+                      <Button 
+                        variant={currentPage === i + 1 ? "primary" : "ghost"} 
+                        mode="icon" 
+                        asChild
+                      >
+                        <Link href={`?page=${i + 1}`}>{i + 1}</Link>
+                      </Button>
+                    </PaginationItem>
+                  ))}
+
+                  <PaginationItem>
+                    <Button variant="ghost" mode="icon" asChild disabled={currentPage === totalPages}>
+                      <Link href={`?page=${Math.min(totalPages, currentPage + 1)}`}>
+                        <ChevronRight className="rtl:rotate-180" />
+                      </Link>
+                    </Button>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <Button variant="ghost" mode="icon" asChild disabled={currentPage === totalPages}>
+                      <Link href={`?page=${totalPages}`}>
+                        <ChevronLast className="rtl:rotate-180" />
+                      </Link>
+                    </Button>
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
             </div>
-          ))}
-        </div>
-      </section>
+          )}
+        </section>
+      </div>
     </main>
   );
 }

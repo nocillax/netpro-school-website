@@ -22,7 +22,7 @@ export default function AboutPage() {
 
         {/* Mission & Vision Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          <div className="bg-primary-50 rounded-3xl p-8 lg:p-10 border border-primary-100">
+          <div id="mission" className="bg-primary-50 rounded-3xl p-8 lg:p-10 border border-primary-100 scroll-mt-24">
             <h2 className="text-2xl font-heading font-bold text-primary-900 mb-4">Our Mission</h2>
             <p className="text-primary-800 leading-relaxed">
               Our mission is to educate all the students to the highest levels of academic achievement, to enable them to reach and to expand their potential and to prepare them to become productive, responsible, ethical, creative and compassionate members of society.
@@ -68,6 +68,92 @@ export default function AboutPage() {
                 School History Image
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Leadership Section */}
+        <div className="mb-24 space-y-12">
+          {/* Chairman */}
+          <div id="chairman" className="bg-surface rounded-3xl p-8 lg:p-12 shadow-card border border-border scroll-mt-24">
+            <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Chairman&apos;s Message</h2>
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="w-48 h-48 rounded-2xl bg-surface-alt border border-border shrink-0 flex items-center justify-center text-text-muted italic overflow-hidden relative">
+                <div className="absolute inset-0 bg-primary-50/50"></div>
+                Photo
+              </div>
+              <div className="space-y-4 text-text-body leading-relaxed flex-1">
+                <h3 className="text-xl font-bold text-primary-700">A K M Mejanur Islam</h3>
+                <p>
+                  &quot;Knowledge, humanity, and skill development are the core foundations of education. Only true education can create enlightened human beings. At Netpro Model School &amp; College, we provide a disciplined and modern environment to prepare students for the future.&quot;
+                </p>
+                <p>
+                  Since our inception in 2005, we have been committed to instilling Nobility, Enlightenment, Truthfulness, Perseverance, Resilience, and Obedience in every student. We believe that true success is measured not just by academic excellence, but by the positive impact our students make on society.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Principal */}
+          <div id="principal" className="bg-surface rounded-3xl p-8 lg:p-12 shadow-card border border-border scroll-mt-24">
+            <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Principal&apos;s Message</h2>
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="w-48 h-48 rounded-2xl bg-surface-alt border border-border shrink-0 flex items-center justify-center text-text-muted italic overflow-hidden relative">
+                <div className="absolute inset-0 bg-secondary-50/50"></div>
+                Photo
+              </div>
+              <div className="space-y-4 text-text-body leading-relaxed flex-1">
+                <h3 className="text-xl font-bold text-secondary-700">Riya Sharmin</h3>
+                <p>
+                  &quot;In a changing world, education is the main ladder for an individual to reach their peak. At Netpro Model School &amp; College, our joyful and disciplined environment ensures students develop into people with right values and the courage to face global challenges.&quot;
+                </p>
+                <p>
+                  Our dedicated faculty works tirelessly to ensure that our curriculum is engaging and robust. We emphasize practical learning alongside theoretical knowledge, ensuring that our students are well-prepared for higher education and beyond.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Governing Body Section */}
+        <div id="governing-body" className="mb-24 scroll-mt-24">
+          <h2 className="text-3xl font-heading font-bold text-text-heading mb-8">Governing Body</h2>
+          <div className="bg-surface rounded-3xl p-8 shadow-card border border-border overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[600px]">
+              <thead>
+                <tr className="bg-surface-alt text-text-muted text-sm uppercase tracking-wider">
+                  <th className="p-4 border-b border-border font-semibold rounded-tl-xl">Name</th>
+                  <th className="p-4 border-b border-border font-semibold">Designation</th>
+                  <th className="p-4 border-b border-border font-semibold rounded-tr-xl">Role</th>
+                </tr>
+              </thead>
+              <tbody className="text-text-body">
+                <tr className="hover:bg-surface-alt/50 transition-colors">
+                  <td className="p-4 border-b border-border font-semibold text-text-heading">A K M Mejanur Islam</td>
+                  <td className="p-4 border-b border-border">Founder</td>
+                  <td className="p-4 border-b border-border">Chairman</td>
+                </tr>
+                <tr className="hover:bg-surface-alt/50 transition-colors">
+                  <td className="p-4 border-b border-border font-semibold text-text-heading">Riya Sharmin</td>
+                  <td className="p-4 border-b border-border">Principal</td>
+                  <td className="p-4 border-b border-border">Member Secretary</td>
+                </tr>
+                <tr className="hover:bg-surface-alt/50 transition-colors">
+                  <td className="p-4 border-b border-border font-semibold text-text-heading">Dr. Md. Rafiqul Alam</td>
+                  <td className="p-4 border-b border-border">Educationist</td>
+                  <td className="p-4 border-b border-border">Member</td>
+                </tr>
+                <tr className="hover:bg-surface-alt/50 transition-colors">
+                  <td className="p-4 border-b border-border font-semibold text-text-heading">Adv. Kamrul Hasan</td>
+                  <td className="p-4 border-b border-border">Legal Advisor</td>
+                  <td className="p-4 border-b border-border">Member</td>
+                </tr>
+                <tr className="hover:bg-surface-alt/50 transition-colors">
+                  <td className="p-4 border-b border-border font-semibold text-text-heading">Mrs. Salma Begum</td>
+                  <td className="p-4 border-b border-border">Guardian Representative</td>
+                  <td className="p-4 border-b border-border">Member</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 

@@ -60,7 +60,7 @@ export default function FacultySection() {
             </h2>
           </div>
           <Link
-            href="/about#faculty"
+            href="/faculties"
             className="inline-flex items-center gap-2 text-sm font-semibold text-accent-600 hover:text-accent-700 transition-colors group"
           >
             View All Teachers

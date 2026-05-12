@@ -20,6 +20,30 @@ export default function AcademicsPage() {
           </p>
         </div>
 
+        {/* Curriculum Section */}
+        <div id="curriculum" className="mb-24 scroll-mt-24">
+          <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Our Curriculum</h2>
+          <div className="bg-surface rounded-3xl p-8 shadow-card border border-border">
+            <p className="text-text-body mb-6 leading-relaxed">
+              Netpro Model School & College strictly follows the curriculum mandated by the National Curriculum and Textbook Board (NCTB) under the Ministry of Education, Bangladesh. We offer English Version and Bangla Medium tracks to cater to diverse student needs, ensuring a robust foundation in science, commerce, and humanities.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 bg-surface-alt rounded-2xl border border-border">
+                <h3 className="text-lg font-bold text-primary-700 mb-2">Primary Level</h3>
+                <p className="text-sm text-text-muted">Playgroup to Class 5. Focus on cognitive development, basic numeracy, literacy, and moral education.</p>
+              </div>
+              <div className="p-6 bg-surface-alt rounded-2xl border border-border">
+                <h3 className="text-lg font-bold text-secondary-700 mb-2">Secondary Level</h3>
+                <p className="text-sm text-text-muted">Class 6 to Class 10 (SSC). Comprehensive coverage of Science, Business Studies, and Humanities streams.</p>
+              </div>
+              <div className="p-6 bg-surface-alt rounded-2xl border border-border">
+                <h3 className="text-lg font-bold text-accent-700 mb-2">Higher Secondary</h3>
+                <p className="text-sm text-text-muted">Class 11 & 12 (HSC). Specialized preparation for board examinations and university admission tests.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Guidelines Sections */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
           {/* Student Guidelines */}
@@ -88,8 +112,41 @@ export default function AcademicsPage() {
           </div>
         </div>
 
+        {/* Routine Section */}
+        <div id="routine" className="mb-24 scroll-mt-24">
+          <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Class Routine</h2>
+          <div className="bg-surface rounded-3xl p-8 shadow-card border border-border flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-4 max-w-2xl">
+              <h3 className="text-xl font-bold text-text-heading">Current Academic Session Routine</h3>
+              <p className="text-text-body">
+                The updated class routine for the current academic session is now available. Students are strictly advised to follow the provided timetable for their respective classes and sections.
+              </p>
+            </div>
+            <button className="shrink-0 px-6 py-3 bg-primary-50 text-primary-600 font-bold rounded-xl hover:bg-primary-100 transition-colors border border-primary-200">
+              Download PDF Routine
+            </button>
+          </div>
+        </div>
+
+        {/* Exam Results Section */}
+        <div id="results" className="mb-24 scroll-mt-24">
+          <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Exam Results</h2>
+          <div className="bg-surface rounded-3xl p-8 shadow-card border border-border">
+            <p className="text-text-body mb-6">
+              Access your internal assessment marks, term exam results, and board exam statistics here. Please enter your Student ID and Date of Birth to view your individual progress report.
+            </p>
+            <form className="flex flex-col sm:flex-row gap-4 max-w-2xl">
+              <input type="text" placeholder="Enter Student ID" className="flex-1 px-4 py-3 rounded-xl border border-border bg-surface-alt focus:outline-none focus:border-primary-400" />
+              <input type="date" className="flex-1 px-4 py-3 rounded-xl border border-border bg-surface-alt focus:outline-none focus:border-primary-400 text-text-muted" />
+              <button type="button" className="px-6 py-3 bg-secondary-600 text-white font-bold rounded-xl hover:bg-secondary-700 transition-colors">
+                View Result
+              </button>
+            </form>
+          </div>
+        </div>
+
         {/* Admission Section */}
-        <div id="admissions" className="bg-primary-50 rounded-3xl p-8 md:p-12 border border-primary-100 relative overflow-hidden">
+        <div id="admissions" className="bg-primary-50 rounded-3xl p-8 md:p-12 border border-primary-100 relative overflow-hidden scroll-mt-24">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-200/50 rounded-full blur-3xl"></div>
           <div className="relative z-10">
             <h2 className="text-3xl font-heading font-bold text-primary-900 mb-6">Admissions Open 2026</h2>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Quote } from "lucide-react";
+import AdminEditOverlay from "@/components/admin/AdminEditOverlay";
 
 export default function MessageSection() {
   return (
@@ -9,6 +10,7 @@ export default function MessageSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {/* Chairman's Message */}
           <div className="bg-surface rounded-3xl p-8 lg:p-10 shadow-card border border-border relative overflow-hidden group">
+            <AdminEditOverlay href="/admin/pages/home?edit=chairman-message" label="Edit Message" position="top-right" />
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <Quote size={80} className="text-primary-600" />
             </div>
@@ -47,6 +49,7 @@ export default function MessageSection() {
 
           {/* Principal's Message */}
           <div className="bg-surface rounded-3xl p-8 lg:p-10 shadow-card border border-border relative overflow-hidden group">
+            <AdminEditOverlay href="/admin/pages/home?edit=principal-message" label="Edit Message" position="top-right" />
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <Quote size={80} className="text-primary-600" />
             </div>
