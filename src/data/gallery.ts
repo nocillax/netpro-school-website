@@ -28,7 +28,7 @@ export const mockGalleryImages: GalleryImage[] = [
   },
   {
     id: "g4",
-    src: "/images/gallery/sports.webp",
+    src: "/images/gallery/annual-sports.webp",
     alt: "Annual Sports Day",
     width: 800,
     height: 600,

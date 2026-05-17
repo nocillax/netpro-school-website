@@ -4,7 +4,7 @@
 This project is a modernized frontend architecture and design skeleton for "Netpro Model School & College, Bogura". It is built as a multi-page website using Next.js (App Router). Currently, server-side features use mocked data, but the architecture is designed to eventually connect to a NestJS backend.
 
 ## Tech Stack
-*   **Framework:** Next.js 15 (App Router)
+*   **Framework:** Next.js 16 (App Router)
 *   **Language:** TypeScript
 *   **Styling:** Tailwind CSS v4 (CSS-native `@theme` configuration)
 *   **Icons:** Lucide React
@@ -30,11 +30,24 @@ src/
 │   ├── page.tsx                  # Home page (Hero, Stats, Messages, Events, Notices, Faculty, CTA)
 │   ├── about/page.tsx            # About Us (Placeholder)
 │   ├── academics/page.tsx        # Academics & Admissions (Placeholder)
-│   ├── admin/page.tsx            # Admin Login UI (Client Component)
+│   ├── admin/                    # Admin Dashboard (Protected routes)
+│   │   ├── layout.tsx            # Admin layout with sidebar
+│   │   ├── page.tsx              # Admin dashboard overview
+│   │   ├── events/page.tsx       # Event management
+│   │   ├── notices/page.tsx      # Notice management
+│   │   └── pages/home/page.tsx   # Homepage content management
+│   ├── api/                      # API Routes
+│   │   └── logout/route.ts       # Logout handler
 │   ├── contact/page.tsx          # Contact Us (Placeholder)
+│   ├── events/page.tsx           # All Events Page
+│   ├── faculties/page.tsx        # Faculty Directory
 │   ├── gallery/page.tsx          # Photo Gallery (Server Component)
+│   ├── login/page.tsx            # Admin Login UI (Client Component)
 │   └── notices/page.tsx          # Notice Board (Server Component)
 ├── components/                   # React components
+│   ├── admin/                    # Admin specific components
+│   │   ├── AdminDataTable.tsx    # Reusable data table for admin lists
+│   │   └── AdminEditOverlay.tsx  # Overlay button for inline editing (visible to admins)
 │   ├── home/                     # Home page specific sections
 │   │   ├── EventsSection.tsx     # Homepage Events View
 │   │   ├── FacultySection.tsx    # Faculty Showcase (Filtered by isFeatured)
@@ -53,14 +66,22 @@ src/
 │       └── FadeIn.tsx            # IntersectionObserver wrapper for scroll animations
 ├── data/                         # Mock data & API simulation layer
 │   ├── events.ts                 # Mock events data (uses isPinned)
+│   ├── faculties.ts              # Mock faculty profiles data
 │   ├── gallery.ts                # Mock gallery images (uses isFeatured)
 │   ├── navigation.ts             # Centralized nav and footer link configurations
-│   └── notices.ts                # Mock notices (uses isPinned)
+│   ├── notices.ts                # Mock notices (uses isPinned)
+│   └── users.ts                  # Mock admin users credentials
 └── types/
     └── index.ts                  # Shared TypeScript interfaces (Notice, GalleryImage, NavLink, etc.)
 
 public/
-└── logo.svg                      # SVG placeholder logo (to be replaced with actual PNG)
+├── images/                       # Local image assets
+│   ├── branding/                 # Logos and branding assets
+│   ├── events/                   # Event thumbnails
+│   ├── faculty/                  # Faculty profile photos
+│   ├── gallery/                  # Gallery photos
+│   └── home/                     # Homepage assets (Hero, Chairman, etc.)
+└── ...
 ```
 
 ## Key Architectural Decisions
@@ -71,18 +92,16 @@ public/
 4.  **Component Strategy:**
     *   **Server Components (Default):** Used for pages fetching data (`/notices`, `/gallery`) and static layouts (`Footer.tsx`).
     *   **Client Components (`"use client"`):** Used only when interactivity or browser APIs are required (`Navbar.tsx` for scroll/toggle state, `/admin` for form handling).
-5.  **Images:** The `next/image` component is configured in `next.config.ts` to allow images from `images.unsplash.com` for the mock gallery.
+5.  **Images:** The project uses high-quality, local `.webp` images stored in the `public/images/` directory to ensure fast load times and relevant assets.
 
 ## Current Completion Status
 
 *   **[DONE] Phase 1: Foundation:** Project structure, Tailwind v4 config, exact brand colors applied, mock data/types created.
 *   **[DONE] Phase 2: Shared Layouts:** Responsive `Navbar` and 4-column `Footer` implemented and integrated into root `layout.tsx`.
 *   **[DONE] Phase 3: Homepage Revamp:** Modernized homepage with `HeroSection`, `QuickStats`, `MessageSection`, `EventsSection`, `RecentNotices`, `FacultySection`, and `FeaturedGallery`. Implemented subtle entrance animations using a custom `FadeIn` component.
-*   **[DONE] Phase 4: Mock Backend Pages:**
-    *   `/notices`: Server component listing notices.
-    *   `/gallery`: Server component with CSS masonry image grid.
-    *   `/admin`: Client component with login form UI.
-*   **[PENDING]:** Fleshing out placeholder pages (`/about`, `/academics`, `/contact`, `/events`), replacing the placeholder `logo.svg` with the actual school logo, and eventually migrating mock data fetching to real NestJS API calls.
+*   **[DONE] Phase 4: Data & Assets Migration:** Migrated unsplash placeholders to local `public/images/` high-quality webp assets. Consolidated faculty data. Added pages for `/faculties` and `/events`.
+*   **[DONE] Phase 5: Admin CMS Infrastructure:** Developed protected `/admin` dashboard with sidebar navigation, `/login` page with secure cookies, and integrated `AdminEditOverlay` for inline editing capabilities on the homepage for authenticated admins.
+*   **[PENDING]:** Fleshing out remaining placeholder pages (`/about`, `/academics`, `/contact`), completing full CRUD operations in the admin panel, and eventually migrating mock data fetching to real NestJS API calls.
 
 ## Instructions for AI Agents
 When working on this project, adhere to the following guidelines:

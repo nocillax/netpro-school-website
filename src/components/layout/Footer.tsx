@@ -151,18 +151,24 @@ export default function Footer() {
       <div className="border-t border-primary-800">
         <div className="section-container py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-primary-400">
           <p>
-            © {currentYear} Netpro Model School &amp; College. All rights
+            © {currentYear}-Netpro Model School &amp; College. All rights
             reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <span>Developed by </span>
             <Link
-              href="/admin"
-              className="hover:text-text-on-dark transition-colors"
+              href="https://github.com/nocillax"
+              className="hover:text-text-on-dark italic transition-colors"
             >
-              Admin Login
+              _nocillax
             </Link>
-            <span className="text-primary-700">•</span>
-            <span>Bogura, Bangladesh</span>
+            <span>with</span>
+            <Link
+              href="https://atr-innovations.github.io/company/"
+              className="hover:text-text-on-dark italic transition-colors"
+            >
+              ATR Innovations
+            </Link>
           </div>
         </div>
       </div>
