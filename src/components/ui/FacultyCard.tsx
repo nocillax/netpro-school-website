@@ -1,6 +1,15 @@
 import Image from "next/image";
 
-export default function FacultyCard({ teacher }: { teacher: { id: string | number, name: string, image: string, designation: string } }) {
+export default function FacultyCard({
+  teacher,
+}: {
+  teacher: {
+    id: string | number;
+    name: string;
+    image: string;
+    designation: string;
+  };
+}) {
   return (
     <div className="group bg-surface rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 border border-border">
       <div className="relative w-full aspect-[4/5] overflow-hidden">

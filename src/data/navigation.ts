@@ -10,7 +10,7 @@ export const mainNavLinks: NavLink[] = [
       { label: "Mission & Vision", href: "/about#mission" },
       { label: "Chairman's Message", href: "/about#chairman" },
       { label: "Principal's Message", href: "/about#principal" },
-      { label: "Governing Body", href: "/about#governing-body" },
+      { label: "Our Faculties", href: "/faculties" },
     ],
   },
   {

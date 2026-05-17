@@ -56,9 +56,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-surface/90 backdrop-blur-lg shadow-nav"
-          : "bg-surface"
+        scrolled ? "bg-surface/90 backdrop-blur-lg shadow-nav" : "bg-surface"
       }`}
     >
       <nav className="section-container flex items-center justify-between h-[72px]">
@@ -74,16 +72,16 @@ export default function Navbar() {
           />
           <div className="hidden sm:block leading-tight">
             <span className="block text-primary-600 font-heading font-bold text-[15px] tracking-tight">
-              Netpro Model School
+              Netpro Model School &amp; College
             </span>
             <span className="block text-primary-500 font-heading text-[12px] tracking-wide">
-              &amp; College, Bogura
+              Bogura
             </span>
           </div>
         </Link>
 
         {/* ——— Desktop Nav Links ——— */}
-        <ul className="hidden lg:flex items-center gap-6">
+        <ul className="hidden lg:flex items-center gap-5">
           {mainNavLinks.map((link) => (
             <DesktopNavItem
               key={link.label}
@@ -136,7 +134,9 @@ export default function Navbar() {
           }`}
         >
           <div className="flex items-center justify-between p-4 border-b border-border h-[72px]">
-            <span className="font-heading font-bold text-primary-600">Menu</span>
+            <span className="font-heading font-bold text-primary-600">
+              Menu
+            </span>
             <button
               onClick={() => setMobileOpen(false)}
               className="p-2 text-text-heading hover:text-primary-600 transition-colors"
@@ -144,7 +144,7 @@ export default function Navbar() {
               <X size={24} />
             </button>
           </div>
-          
+
           <div className="flex-1 overflow-y-auto py-4 px-4">
             <ul className="space-y-1">
               {mainNavLinks.map((link) => (

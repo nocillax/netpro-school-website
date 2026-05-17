@@ -10,52 +10,52 @@ export const metadata: Metadata = {
 const allFaculty = [
   {
     id: 1,
-    name: "Dr. Rafiqul Alam",
-    designation: "Head of Science Department",
-    image: "/images/faculty/teacher-1.webp",
+    name: "Md Alamgir Hossain",
+    designation: "Academic Head",
+    image: "/images/faculty/academic-head.webp",
   },
   {
     id: 2,
-    name: "Ms. Salma Begum",
-    designation: "Senior Mathematics Teacher",
-    image: "/images/faculty/teacher-3.webp",
+    name: "Mst. Jasmine Sultana Mili",
+    designation: "Full School Coordinator",
+    image: "/images/faculty/school-coordinator.webp",
   },
   {
     id: 3,
-    name: "Mr. Kamrul Hasan",
-    designation: "Head of Humanities",
-    image: "/images/faculty/teacher-2.webp",
+    name: "Mst. Sharmin Akter",
+    designation: "School Coordinator (Secondary)",
+    image: "/images/faculty/school-coordinator(secondary).webp",
   },
   {
     id: 4,
-    name: "Mrs. Nasrin Akter",
-    designation: "Senior English Teacher",
-    image: "/images/faculty/teacher-5.webp",
+    name: "Md. Delowar Hossain",
+    designation: "Head of Events & Activities",
+    image: "/images/faculty/head-of-event-&-activity.webp",
   },
   {
     id: 5,
-    name: "Mr. Abdus Sabur",
-    designation: "Physical Education Instructor",
-    image: "/images/faculty/teacher-4.webp",
+    name: "Md. Mokbul Hossain",
+    designation: "Senior Assistant Teacher (Math)",
+    image: "/images/faculty/sr-assistant-teacher-math.webp",
   },
   {
     id: 6,
-    name: "Mrs. Ayesha Siddiqa",
-    designation: "Biology & Chemistry Teacher",
-    image: "/images/faculty/teacher-6.webp",
+    name: "Md. Atiqur Rahman Rasel",
+    designation: "Assistant Teacher (ICT)",
+    image: "/images/faculty/assistant-teacher-ict.webp",
   },
   {
     id: 7,
-    name: "Mr. Hasan Mahmud",
-    designation: "Physics Lecturer",
-    image: "/images/faculty/teacher-2.webp",
+    name: "Mst. Farhana Ferdousi",
+    designation: "Senior Assistant Teacher (Science)",
+    image: "/images/faculty/sr-assistant-teacher-science.webp",
   },
   {
     id: 8,
-    name: "Ms. Nafisa Akter",
-    designation: "Computer Science Teacher",
-    image: "/images/faculty/teacher-1.webp",
-  }
+    name: "Md. Ruhul Amin Sheikh",
+    designation: "Assistant Teacher (English)",
+    image: "/images/faculty/assistant-teacher-english.webp",
+  },
 ];
 
 export default function FacultiesPage() {
@@ -68,7 +68,9 @@ export default function FacultiesPage() {
             Our <span className="text-primary-600">Faculties</span>
           </h1>
           <p className="text-lg text-text-body leading-relaxed">
-            Our experienced and dedicated faculty members are committed to providing the highest quality education and shaping the future leaders of tomorrow.
+            Our experienced and dedicated faculty members are committed to
+            providing the highest quality education and shaping the future
+            leaders of tomorrow.
           </p>
         </div>
 
