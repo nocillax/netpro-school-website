@@ -17,7 +17,7 @@ export const mockEvents: EventItem[] = [
     date: "2026-02-15",
     time: "08:00 AM - 04:00 PM",
     location: "School Main Ground",
-    image: "/images/events/football.webp",
+    image: "/images/events/annual-sports.webp",
     excerpt: "Join us for a day of athletic excellence and school spirit at our annual sports meet.",
     isPinned: true,
   },
