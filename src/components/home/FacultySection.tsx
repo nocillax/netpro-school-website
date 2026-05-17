@@ -1,47 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, Users } from "lucide-react";
 import FacultyCard from "@/components/ui/FacultyCard";
-
-const mockFaculty = [
-  {
-    id: 1,
-    name: "Dr. Rafiqul Alam",
-    designation: "Head of Science Department",
-    image: "/images/faculty/teacher-1.webp",
-    isFeatured: true,
-  },
-  {
-    id: 2,
-    name: "Ms. Salma Begum",
-    designation: "Senior Mathematics Teacher",
-    image: "/images/faculty/teacher-3.webp",
-    isFeatured: true,
-  },
-  {
-    id: 3,
-    name: "Mr. Kamrul Hasan",
-    designation: "Head of Humanities",
-    image: "/images/faculty/teacher-2.webp",
-    isFeatured: true,
-  },
-  {
-    id: 4,
-    name: "Mrs. Nasrin Akter",
-    designation: "Senior English Teacher",
-    image: "/images/faculty/teacher-5.webp",
-    isFeatured: true,
-  },
-  {
-    id: 5,
-    name: "Mr. Abdus Sabur",
-    designation: "Physical Education Instructor",
-    image: "/images/faculty/teacher-4.webp",
-    isFeatured: false,
-  }
-];
+import { faculties } from "@/data/faculties";
 
 export default function FacultySection() {
-  const featuredFaculty = mockFaculty.filter((f) => f.isFeatured);
+  const featuredFaculty = faculties.filter((f) => f.isFeatured);
 
   return (
     <section className="section-padding bg-surface">
