@@ -22,7 +22,9 @@ export default function AcademicsPage() {
 
         {/* Curriculum Section */}
         <div id="curriculum" className="mb-24 scroll-mt-24">
-          <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Our Curriculum</h2>
+          <h2 className="text-3xl font-heading font-bold text-text-heading mb-6">
+            Our Curriculum
+          </h2>
           <div className="bg-surface rounded-3xl p-8 shadow-card border border-border">
             <p className="text-text-body mb-6 leading-relaxed">
               Netpro Model School & College strictly follows the curriculum mandated by the National Curriculum and Textbook Board (NCTB) under the Ministry of Education, Bangladesh. We offer English Version and Bangla Medium tracks to cater to diverse student needs, ensuring a robust foundation in science, commerce, and humanities.
@@ -114,7 +116,9 @@ export default function AcademicsPage() {
 
         {/* Routine Section */}
         <div id="routine" className="mb-24 scroll-mt-24">
-          <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Class Routine</h2>
+          <h2 className="text-3xl font-heading font-bold text-text-heading mb-6">
+            Class Routine
+          </h2>
           <div className="bg-surface rounded-3xl p-8 shadow-card border border-border flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-4 max-w-2xl">
               <h3 className="text-xl font-bold text-text-heading">Current Academic Session Routine</h3>
@@ -130,7 +134,9 @@ export default function AcademicsPage() {
 
         {/* Exam Results Section */}
         <div id="results" className="mb-24 scroll-mt-24">
-          <h2 className="text-3xl font-heading font-bold text-text-heading mb-8 border-b border-border pb-4">Exam Results</h2>
+          <h2 className="text-3xl font-heading font-bold text-text-heading mb-6">
+            Exam Results
+          </h2>
           <div className="bg-surface rounded-3xl p-8 shadow-card border border-border">
             <p className="text-text-body mb-6">
               Access your internal assessment marks, term exam results, and board exam statistics here. Please enter your Student ID and Date of Birth to view your individual progress report.

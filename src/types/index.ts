@@ -29,3 +29,11 @@ export interface QuickStat {
   value: string;
   icon: string;
 }
+
+export interface Faculty {
+  id: number;
+  name: string;
+  designation: string;
+  image: string;
+  isFeatured?: boolean;
+}
