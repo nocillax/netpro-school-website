@@ -169,11 +169,11 @@
 
 /* Section spacing */
 .section-padding {
-  padding-block: 4rem;
+  padding-block: 2.5rem;
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-block: 6rem;
+    padding-block: 4rem;
   }
 }
