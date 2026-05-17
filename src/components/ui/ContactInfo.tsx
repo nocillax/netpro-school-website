@@ -5,10 +5,10 @@ export default function ContactInfo() {
   return (
     <div className="max-w-6xl w-full mx-auto pb-16 md:pb-24">
       <div className="flex flex-col items-start mb-16">
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-text-heading">
+        <h1 className="text-4xl md:text-5xl font-heading font-bold text-text-heading">
           We&apos;d love to{" "}
           <span className="text-primary-600">Hear From You.</span>
-        </h2>
+        </h1>
         <p className="text-lg text-text-body mt-6 max-w-2xl leading-relaxed">
           Have questions about admissions, curriculum, or school life? Our
           dedicated team is ready to assist you.

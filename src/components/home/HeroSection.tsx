@@ -81,9 +81,9 @@ export default function HeroSection() {
                   Admissions Open for 2026-27
                 </div>
 
-                <p className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-on-dark leading-tight mb-6 drop-shadow-md">
+                <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-on-dark leading-tight mb-6 drop-shadow-md">
                   {carouselSlides[currentSlide].title}
-                </p>
+                </h1>
 
                 <p className="text-lg md:text-xl text-text-on-dark/90 mb-10 max-w-2xl drop-shadow">
                   {carouselSlides[currentSlide].subtitle}

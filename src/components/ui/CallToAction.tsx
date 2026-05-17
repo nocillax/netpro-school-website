@@ -19,12 +19,24 @@ export default function CallToAction({ className }: CallToActionProps) {
       <div className="relative z-10 flex flex-col items-center">
         <div className="flex flex-wrap items-center justify-center p-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm mb-8 animate-fade-in">
           <div className="flex items-center">
-            <img className="size-8 md:size-9 rounded-full border-2 border-white shadow-sm"
-              src="/images/faculty/teacher-1.webp" alt="Student 1" />
-            <img className="size-8 md:size-9 rounded-full border-2 border-white shadow-sm -translate-x-3"
-              src="/images/faculty/teacher-3.webp" alt="Student 2" />
-            <img className="size-8 md:size-9 rounded-full border-2 border-white shadow-sm -translate-x-6"
-              src="/images/faculty/teacher-6.webp" alt="Student 3" />
+            {/* Avatar Silhouette 1 */}
+            <div className="size-8 md:size-9 rounded-full border-2 border-white bg-primary-100 text-primary-600 flex items-center justify-center shadow-sm overflow-hidden shrink-0">
+              <svg className="w-5 h-5 mt-1" viewBox="0 0 24 24" fill="currentColor">
+                <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clipRule="evenodd" />
+              </svg>
+            </div>
+            {/* Avatar Silhouette 2 */}
+            <div className="size-8 md:size-9 rounded-full border-2 border-white bg-secondary-100 text-secondary-600 flex items-center justify-center shadow-sm overflow-hidden shrink-0 -translate-x-3">
+              <svg className="w-5 h-5 mt-1" viewBox="0 0 24 24" fill="currentColor">
+                <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clipRule="evenodd" />
+              </svg>
+            </div>
+            {/* Avatar Silhouette 3 */}
+            <div className="size-8 md:size-9 rounded-full border-2 border-white bg-indigo-100 text-indigo-600 flex items-center justify-center shadow-sm overflow-hidden shrink-0 -translate-x-6">
+              <svg className="w-5 h-5 mt-1" viewBox="0 0 24 24" fill="currentColor">
+                <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clipRule="evenodd" />
+              </svg>
+            </div>
           </div>
           <p className="-translate-x-3 font-semibold px-2">Join our community of 2,000+ students</p>
         </div>

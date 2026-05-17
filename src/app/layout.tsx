@@ -17,6 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://netpromodelschool.edu.bd"),
   title: {
     default: "Netpro Model School & College, Bogura",
     template: "%s — Netpro Model School & College",
@@ -30,7 +31,66 @@ export const metadata: Metadata = {
     "Bogura",
     "Education",
     "Bangladesh",
+    "Netpro Bogura",
+    "School in Bogura",
+    "College in Bogura",
+    "Best school in Bogura",
   ],
+  authors: [{ name: "Netpro Model School & College" }],
+  creator: "Netpro Model School & College",
+  publisher: "Netpro Model School & College",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "Netpro Model School & College, Bogura",
+    description:
+      "Empowering students with quality education, moral values, and the skills to excel in an ever-changing world.",
+    url: "https://nocillax-netpro.vercel.app/",
+    siteName: "Netpro Model School & College",
+    images: [
+      {
+        url: "/images/branding/logo.png",
+        width: 800,
+        height: 800,
+        alt: "Netpro Model School & College Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Netpro Model School & College, Bogura",
+    description:
+      "Empowering students with quality education, moral values, and the skills to excel in an ever-changing world.",
+    images: ["/images/branding/logo.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
