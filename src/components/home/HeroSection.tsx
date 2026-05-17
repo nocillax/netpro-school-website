@@ -55,14 +55,15 @@ export default function HeroSection() {
       {carouselSlides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-0" : "opacity-0 -z-10"
-            }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
         >
           <Image
             src={slide.image}
             alt={slide.alt}
             fill
-            priority={index === 0}
+            priority
             className="object-cover object-center"
             sizes="100vw"
           />
