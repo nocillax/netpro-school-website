@@ -53,11 +53,11 @@ export default function AboutPage() {
         </div>
 
         {/* History Section */}
-        <div id="history" className="mb-24">
+        <div id="history" className="mb-24 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <h2 className="text-3xl font-heading font-bold text-text-heading mb-6">
-                Our Journey
+                Our History
               </h2>
               <div className="space-y-4 text-text-body leading-relaxed">
                 <p>
