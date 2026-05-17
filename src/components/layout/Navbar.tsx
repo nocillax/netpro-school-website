@@ -65,11 +65,11 @@ export default function Navbar() {
         {/* ——— Logo ——— */}
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <Image
-            src="/logo.svg"
+            src="/images/branding/logo.png"
             alt="Netpro Model School & College Logo"
-            width={44}
-            height={44}
-            className="w-11 h-11 object-contain"
+            width={48}
+            height={48}
+            className="w-12 h-12 object-contain"
             priority
           />
           <div className="hidden sm:block leading-tight">

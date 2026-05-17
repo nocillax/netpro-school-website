@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactInfo from "@/components/ui/ContactInfo";
 import CallToAction from "@/components/ui/CallToAction";
 
@@ -20,7 +21,10 @@ export default function ContactPage() {
           <div className="bg-surface rounded-[2.5rem] p-8 md:p-12 shadow-card border border-border">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               <div className="lg:col-span-2">
-                <h2 className="text-3xl font-heading font-bold text-text-heading mb-6">Send us a Message</h2>
+                <div className="flex items-center gap-4 mb-6">
+                  <Image src="/images/branding/logo.png" alt="Logo" width={40} height={40} className="object-contain" />
+                  <h2 className="text-3xl font-heading font-bold text-text-heading">Send us a Message</h2>
+                </div>
                 <p className="text-text-body mb-8">
                   Prefer to write to us? Fill out the form and our team will get back to you as soon as possible.
                 </p>

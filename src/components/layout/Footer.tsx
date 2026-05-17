@@ -21,11 +21,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5">
               <Image
-                src="/logo.svg"
+                src="/images/branding/logo.png"
                 alt="Netpro Model School & College"
-                width={48}
-                height={48}
-                className="w-12 h-12 object-contain brightness-0 invert"
+                width={52}
+                height={52}
+                className="w-13 h-13 object-contain"
               />
               <div className="leading-tight">
                 <span className="block font-heading font-bold text-text-on-dark text-[15px]">

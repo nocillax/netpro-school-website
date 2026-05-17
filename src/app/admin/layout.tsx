@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { LogOut, LayoutDashboard, CalendarDays, Bell, FileText } from "lucide-react";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -15,8 +16,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     <div className="flex h-screen bg-surface-alt pt-[80px]">
       {/* Sidebar */}
       <aside className="w-64 bg-surface border-r border-border flex flex-col hidden md:flex">
-        <div className="p-6 border-b border-border">
-          <h2 className="font-heading font-bold text-text-heading text-lg">Admin Panel</h2>
+        <div className="p-6 border-b border-border flex items-center gap-3">
+          <Image src="/images/branding/logo.png" alt="Logo" width={32} height={32} className="object-contain" />
+          <h2 className="font-heading font-bold text-text-heading text-lg leading-tight">Admin Panel</h2>
         </div>
         <nav className="flex-1 p-4 space-y-2">
           <Link href="/admin" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary-50 text-text-body hover:text-primary-600 transition-colors font-medium">
